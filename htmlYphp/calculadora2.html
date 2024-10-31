@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+form{
+    display: flex;
+}
+.num{
+    background-color: rgb(176, 236, 130);
+    border-radius: 10px;
+}
+.op{
+    border-radius: 5px;
+}
+
+fieldset{
+    background-color: rgb(192, 231, 165);
+    border-color: rgb(38, 105, 47);
+    
+}
+legend{
+    -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(27, 78, 3);
+}
+
+
+</style>
+<body>
+
+
+    <form action="calculadora2.php" method="post">
+        <fieldset>
+            <legend>CALCULADORA</legend>
+        <label for="Numero 1">Número 1: </label>
+        <input type="number" name="num1" class="num">
+        <br>
+        <br>
+        <label for="Numero 2"> Número 2:</label>
+        <input type="number" name="num2" class="num">
+        <br>
+        <br>
+        <label for="Operador"> Operador:</label>
+        <select name="op" class="op">
+            <option value="S">Sumar</option>
+            <option value="R">Restar</option>
+            <option value="M">Multiplicar</option>
+            <option value="D">Dividir</option>
+        </select>
+        <br>
+        <br>
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" class="fecha">
+        <br>
+        <br>
+
+        <input type="submit" value="ENVIAR" class="enviar">
+        </fieldset>
+
+    </form>
+    
+</body>
+</html>

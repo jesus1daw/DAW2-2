@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes SISTEMAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+<h1 class="titulo">APUNTES DESARROLLO EN ENTORNO SERVIDOR</h1>
+<div class="puntoUnoUno">
+    <h2 class="tituloUnoUno">1.1. ARQUITECTURA CLIENTE/SERVIDOR</h2> 
+    <h3 id="t1">CONCEPTO.ELEMENTOS.NIVELES</h3>
+    <p>La arquitectura cliente-servidor es un modelo de aplicación distribuida en el que las
+        tareas se reparten entre los proveedores de recursos (servidores), y los demandantes
+        (clientes).Transfiere archivos HTML y otros asociados mediante el proptocolo HTTP
+    </p>
+    <table>
+        <tr>
+            <th colspan="2">CARACTERÍSTICAS</th>
+        </tr>
+        <tr>
+            <th>Servicio de página web(HTML y associados)</th>
+            <td>Es la unidad basica del modelo, el servidor lo proporciona y el cliente lo consume</td>
+        </tr>
+        <tr>
+            <th>Recursos ofrecidos</th>
+            <td>Documentos HTML, CSS, JS, imagenes,sonidos...</td>
+        </tr>
+        <tr>
+            <th>HTTP protocolo asimetrico</th>
+            <td>Los clientes realizan “peticiones” y los servidores esperan pasivamente y responden a
+                cada petición.</td>
+        </tr>
+        <tr>
+            <th>Transparencia</th>
+            <td>El cliente no necesita saber donde está físicamente situado el servidor ni el recurso que
+                desea utilizar.</td>
+        </tr>
+        <tr>
+            <th>Sistemas débilmente acoplados</th>
+            <td>La interacción entre cliente y servidor, está basada únicamente en el envío de mensajes
+                mediante protocolo HTTP,</td>
+        </tr>
+    </table>
+    <img src="peerCliente.png" alt="" id="peerToPeer">
+    <div class="cliente">
+    <h3 id="t2">CLIENTE</h3>
+    <p>Programa que solicita el establecimiento de las conexiones con el servidor.Una vez
+        aceptada, envía una peticion al servidor y espera la respuesta.
+    </p>
+    <b>Funciones: </b>
+    <ul>
+        <li>Interactuar con el usuario</li>
+        <li>Realizar validaciones locales según la lógica del negocio</li>
+        <li>Generar peticiones de información al servidor</li>
+        <li>Presentar los resultados renderizados(con formato)</li>
+    </ul>
+    </div>
+    <div class="servidor">
+    <h3 id="t3">SERVIDOR</h3>
+    <p>Programa que comparte los recursos y servicios que se pueden obtener de una red
+        Acepta peticiones del cliente, lo procesa y devuelve el resultado.
+        Debe soportar muchas peticiones de clientes simultaneamente.
+        El servidor comienza su ejecución antes de interacuar con el cliente y se mantiene después
+        de terminarla
+        <b>(daemon)</b>.
+    </p>
+    <b>Funciones:</b>
+    <ul>
+        <li>Aceptar peticiones de datos de multiples clientes</li>
+        <li>Procesar la lógica y realizar validaciones a nivel de BBDD</li>
+        <li>Realizar consultas a BBDD</li>
+        <li>Generar una respuesta con formato</li>
+        <li>Transmitir los datos a los clientes</li>
+    </ul>
+    </div>
+    <div class="ventajasCS">
+    <h3 id="t4">Ventajas del modelo Cliente/Servidor</h3>
+    <ul>
+        <li>Facilidad mantenimiento y actualizacion</li>
+        <li>Seguridad e integración de datos ya que se encuentran "fisicamente" en los servidores. (cortafuegos,IDS,personal)</li>
+        <li>Integración entre sistemas diferentes (S.O diferentes)</li>
+        <li>Facilmente escalables:
+            <ul>
+                <li>Escalado Horizontal: Replicación de servidores (cluster)</li>
+                <li>Escalado Vertical: Descomponerse en grupos según su función</li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+    <h3>Desventajas</h3>
+    <ul>
+        <li>Saturación del servidor por elevado número de peticiones (DDOS)</li>
+        <li>Paradas por mantenimiento</li>
+    </ul>
+    <h3>Capas de la arquitectura Cliente/Servidor</h3>
+    <ol>
+        <li>Capa de Presentación(Interfaz Usuario): <br>
+            Interacciona con el usuario, presenta los datos y recibe entradas
+            
+        </li><br>
+        <li>Capa de Aplicación/Negocio (lógica de aplicación):<br>
+            Lógica de la aplicación y aplica reglas de negocio.Se comunica con las otras capas.
+        </li>
+        <br>
+        <li>Capa de Datos (almacenamiento y acceso a datos): <br>
+            Gestión y almacenamiento de los datos
+        </li>
+    </ol>
+    <h3>Tipos de arquitecturas cliente/servidor por niveles</h3>
+
+
+    
+</div>
+
+
+
+    
+</body>
+</html>

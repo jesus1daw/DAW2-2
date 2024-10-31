@@ -1,0 +1,2 @@
+<?php
+$fechaActual = new DateTime();

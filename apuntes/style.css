@@ -1,0 +1,117 @@
+*{
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: antiquewhite;
+    font-family: "Raleway";
+}
+
+.titulo{
+    color: blue;
+    display: grid;
+    place-items: center; 
+    border-bottom: solid black;
+    padding-bottom: 10px;
+    
+}
+.puntoUnoUno{
+    display: grid;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: inline;
+}
+
+.tituloUnoUno{
+    color: rgb(114, 114, 237);
+    width: auto;
+
+}
+
+#t1{
+    border-bottom: solid black 3px;
+    display: inline-block;
+    margin-bottom: 0;
+    
+}
+
+#t1+p{
+    margin-top: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    display: grid;
+    place-items: center;
+    margin-top: 30px; 
+    margin-bottom: 50px;
+}
+
+th,td {
+  border: 1px solid rgb(44, 15, 15); 
+  background-color: rgba(255, 228, 196, 0.548);
+  padding: 20px;
+}
+
+#peerToPeer {
+    display: block; /* Cambiar a block para ajustar el tamaño */
+    width: 60%; /* Debe coincidir con el ancho de la línea */
+    margin: auto; /* Centra la imagen */
+    margin-bottom: 50px;
+    border: solid black 1px;
+    transition: transform 0.5s ease;
+    
+    
+}
+.cliente, .servidor{
+    margin:0px;
+    border: solid  black 1px;
+    border-radius: 20px;
+    margin-left: 80px;
+    background-color:  rgba(255, 228, 196, 0.548);
+    margin-bottom: 30px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#t2, #t3{
+    border-bottom: solid black 3px;
+    display: inline-block;
+    margin-left: 20px;
+    background-color:  rgba(255, 228, 196, 0.548);
+   
+    
+}
+
+#t2+p, #t3+p{
+    margin-top: 10px;
+    background-color:  rgba(255, 228, 196, 0.548);
+    
+}
+#t2~b, #t2~ul li, #t3~b, #t3~ul li {
+    background-color:  rgba(255, 228, 196, 0.548);
+
+}
+
+#t2~ul, #t3~ul{
+    padding: 0px; 
+    margin-bottom: 50px;  
+    margin-left: 200px;
+    
+}
+
+#t2~ul li,  #t3~ul li{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#t3+p b{
+    margin-left: 0px;
+    background-color:  rgba(255, 228, 196, 0.548);
+
+    
+}
+
+#peerToPeer:hover{
+    
+    transform: scale(1.5);
+
+}
+
