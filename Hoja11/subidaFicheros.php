@@ -3,7 +3,7 @@
 session_start();
 $error=false;
 $err1 = $err2 = $err3 = $err4 = 
-$titulo = $texto = $imagen = "" ;
+$titulo = $texto = $imagen = $err5="" ;
 $categoria = []; // Aseguramos que siempre sea un array
 
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     
-    
+   
 
     if (!$error) {
         $_SESSION['titulo'] = $titulo;
@@ -43,6 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: /PHP/Hoja11/subidaFicheros-Resultado.php");
         exit(); 
     }
+
+
 }
 
 ?>
@@ -58,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fieldset{
         width: 80%;
     
-        border: dotted blue;
+        border: solid black;
     }
     .error{
         color: red;
@@ -96,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br><br>
         
         <label for="imagen">Imagen:</label>
-        <input type="file" id="imagen" name="imagen">
+        <input type="file" id="imagen" name="imagen[]" multiple>
         <span class = "error"><?php echo $err4; ?></span>
         <br><br>
         

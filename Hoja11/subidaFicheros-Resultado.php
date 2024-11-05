@@ -5,6 +5,7 @@
     $titulo = $_SESSION['titulo'];
     $texto = $_SESSION['texto'];
     $categoria=$_SESSION['categoria'];
+    $imagen=$_SESSION['imagen'];
 
 
     echo "<p><strong> Titulo: </strong> $titulo </p>";
@@ -12,11 +13,15 @@
     echo "<strong>Categorias: </strong> <br>";
 
     foreach($categoria as $cat){
-
         echo $cat ."<br>";
     }
     echo "<br>";
+    echo "<strong>Imágenes: </strong> <br>";
 
+    foreach($imagen as $img){
+        echo $img . "<br>";
+    }
+    echo "<br>";
     ?>
 
     <!DOCTYPE html>
