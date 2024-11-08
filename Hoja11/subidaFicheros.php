@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titulo = isset($_POST["titulo"]) ? $_POST["titulo"] : '';
     $texto = isset($_POST["texto"]) ? $_POST["texto"] : '';
     $categoria = isset($_POST["categoria"]) ? (array)$_POST["categoria"] : []; // Convertimos a array si no lo es
-    $imagen = isset($_POST["imagen"]) ? $_POST["imagen"] : '';
+    $imagen = isset($_POST["imagen"]) ? (array)$_POST["imagen"] : [];
 
     if (empty($titulo)) {
         $err1="Titulo obligatorio";
