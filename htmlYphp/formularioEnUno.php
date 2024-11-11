@@ -2,22 +2,31 @@
 /* si va bien redirige a principal.php si va mal, mensaje de error */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {  	
 
-$usuarios=array("usuario"=>"1234",
-    "usuario2"=>"2345",
-    "usuario3"=>"3456",
-    "usuario4"=>"4567");
 
-$usuario=$_POST["usuario"];
-$clave=$_POST["clave"];
+	try{
+		$mbd= new PDO('mysql:host=localhost;dbname=usuarios','usuario1','usuario1');
+		
+		$usuario=$_POST["usuario"];
+		$contraseña=$_POST["clave"];
+
+		$pass=$mbd->prepare("SELECT password FROM users WHERE userName=:usuario");
+		$pass->bindParam(":usuario",$usuario);
+		$pass->execute();
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-    foreach ($usuarios as $key => $value) {
-        if($usuario==$key&&$clave==$value){
+		if($pass==$contraseña){
             header("Location: principal.php");
         }else{
             $err=true;
         }
-    }
+		} catch (PDOException $e){
+			print "¡Error!: ". $e->getMessage(). "<br/>";
+		}
+
+
+
+
 }
 
 
