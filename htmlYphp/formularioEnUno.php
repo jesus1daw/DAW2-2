@@ -20,18 +20,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	try{
 		$mbd= new PDO('mysql:host=localhost;dbname=usuarios','usuario1','usuario1');
 		//$pass=$mbd->prepare("SELECT * FROM users WHERE userName=:usuario AND contraseña=:contraseña");
-		$pass=$mbd->prepare("SELECT contraseña FROM users WHERE userName=:usuario");
-		$pass->bindParam(":usuario",$usuario);
+		//$pass=$mbd->prepare("SELECT contraseña FROM users WHERE userName='$usuario'");
+		$pass=$mbd->prepare("SELECT * FROM users WHERE userName='$usuario' AND contraseña='$contraseña'");
+		// $pass->bindParam(":usuario",$usuario);
 		//$pass->bindParam(":contraseña",$contraseña);
 		$pass->execute();
-		$result=$pass->fetch(PDO::FETCH_ASSOC);
-		$contr=$result['contraseña'];
-		
-		if($contr==$contraseña){
-            header("Location: principal.php");
+
+		if ($pass->rowCount()>=1){
+
+			header("Location: principal.php");
+
 		}else{
 			$err=true;
 		}
+		// $result=$pass->fetch(PDO::FETCH_ASSOC);
+		// $contr=$result['contraseña'];
+		
+		// if($contr==$contraseña){
+        //     header("Location: principal.php");
+		// }else{
+		// 	$err=true;
+		// }
 		} catch (PDOException $e){
 			print "¡Error!: ". $e->getMessage(). "<br/>";
 		}
