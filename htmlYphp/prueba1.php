@@ -19,8 +19,7 @@ try{
     $contraseña3=password_hash("ajdajd", PASSWORD_BCRYPT);
     $contraseña4=password_hash("perro", PASSWORD_BCRYPT);
 
-    $query1="INSERT INTO users VALUES ('jesus', '$contraseña1'),
-    ('ivan', '$contraseña2'),
+    $query1="INSERT INTO users VALUES ('jesus', '$contraseña1'),('ivan', '$contraseña2'),
     ('isaac', '$contraseña3'),
     ('khaled', '$contraseña4')";
     

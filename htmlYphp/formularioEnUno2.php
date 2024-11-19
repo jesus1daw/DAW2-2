@@ -30,6 +30,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $err=true;
         }
 
+		$sql = 'SELECT userName, contraseña, rol FROM users';
+	$usuarios = $bd->query($sql);
+	echo "Número de usuarios: " . $usuarios->rowCount() . "<br>";
+	foreach ($usuarios as $usu) {
+		print "Nombre : " . $usu['userName'];
+		print " Clave : " . $usu['contraseña'] . "<br>";
+	}
+	/* consulta preparada, parametros por orden */	
+	$preparada = $bd->prepare("select userName from users where rol = ?");	
+	$preparada->execute( array(0));
+	echo "Usuarios con rol 0: " .  $preparada->rowCount() . "<br>";
+	foreach ($preparada as $usu) {
+		print "Nombre : " . $usu['userName'] . "<br>";
+	}
+	/* consulta preparada, parametros por nombre */	
+	$preparada_nombre = $bd->prepare("select userName from users where rol = :rol");
+	$preparada_nombre->execute( array(':rol' => 0));
+	echo "Usuarios con rol 0: " .  $preparada->rowCount() . "<br>";
+	foreach ($preparada_nombre  as $usu) {
+		print "Nombre : " . $usu['userName'] . "<br>";
+	}	
 
     
 		} catch (PDOException $e){
