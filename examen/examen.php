@@ -20,7 +20,7 @@
 		productos.php?categoria=1-->
 		<?php
 		$categorias = cargar_preguntas();
-            $respuestas = cargar_respuestas(1);
+        $respuestas = cargar_respuestas(1);
         
 		if($categorias===false){
 			echo "<p class='error'>Error al conectar con la base datos</p>";
