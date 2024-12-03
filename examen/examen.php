@@ -30,9 +30,9 @@
 				/*$cat['nombre] $cat['codCat']*/
 				echo $cat['idPregunta']." ";
 				echo $cat['enunciado'];
-                foreach($respuestas as $res){
-                    echo $res['texto'];
-                }
+                // foreach($respuestas as $res){
+                //     echo $res['texto'];
+                // }
                 echo "<hr>";
                 
 			}
